@@ -12,43 +12,61 @@ first(names, function(firstName) {
 
 /* NEXT PROBLEM - NEXT PROBLEM - NEXT PROBLEM */
 var names = ['Tyler', 'Cahlan', 'Ryan', 'Colt', 'Tyler', 'Blaine', 'Cahlan'];
-function last(nameList,cb){
-  cb(nameList[nameList.length - 1]);
-}
-last(names, function(lastName){
-  console.log('The last name in names is ', lastName);
-});
 
+function last(nameList, cb) {
+    cb(nameList[nameList.length - 1]);
+}
+last(names, function(lastName) {
+    console.log('The last name in names is ', lastName);
+});
 
 
 
 /* NEXT PROBLEM - NEXT PROBLEM - NEXT PROBLEM */
 
 //have the contains function return a boolean value for if the name is in the array or not.
-
-
 var names = ['Tyler', 'Cahlan', 'Ryan', 'Colt', 'Tyler', 'Blaine', 'Cahlan'];
-contains('Colt', names, function(yes){
-  if(yes){
-    console.log('Colt is in the array');
-  } else {
-    console.log('Colt is not in the list');
-  }
+
+function contains(randName, nameList, cb) {
+    for (var i = 0; i < nameList.length - 1; i++) {
+        if (nameList[i] === randName) {
+            var result = true;
+        }
+    }
+    cb(true);
+}
+contains('Colt', names, function(yes) {
+    if (yes) {
+        console.log('Colt is in the array');
+    } else {
+        console.log('Colt is not in the list');
+    }
 });
 
 
 
 
-/* NEXT PROBLEM - NEXT PROBLEM - NEXT PROBLEM */
-
-
-
-
+/* NEXT PROBLEM - NEXT PROBLEM - NEXT PROBLEM  COOOOOL COOOOOL*/
 var numbers = [1,2,3,4,5];
+function map(numList,cb){
+  var empArr = [];
+  for(var i = 0; i < numList.length; i++) {
+    var calced = cb(numList[i]);
+     empArr.push(calced);
+  }
+  return empArr;
+  //debugger
+}
 //Produces a new array of values by mapping each value in list through a transformation function
+
 map(numbers, function(num){
   return num * 2; //returns an array of [2,4,6,8,10]
+
 });
+
+// console.log(map([6,5,9,4,6,3,8,9,4], function(i){
+//   return i+57-i*i + i*i*i;
+// }))
 
 
 
@@ -59,6 +77,9 @@ map(numbers, function(num){
 
 
 var names = ['Tyler', 'Cahlan', 'Ryan', 'Colt', 'Tyler', 'Blaine', 'Cahlan'];
+function uniq(nameList,cb) {
+
+}
 uniq(names, function(uniqArr){
   console.log('The new names array with all the duplicate items removed is ', uniqArr);
 });
