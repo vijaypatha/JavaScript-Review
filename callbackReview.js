@@ -77,13 +77,22 @@ map(numbers, function(num){
 
 
 var names = ['Tyler', 'Cahlan', 'Ryan', 'Colt', 'Tyler', 'Blaine', 'Cahlan'];
-function uniq(nameList,cb) {
 
+function uniq(nameList, cb) {
+    for (var i = 0; i < nameList.length; i++) {
+        for (var j = i + 1; j < nameList.length; j++) {
+            if (nameList[i] === nameList[j]) {
+                nameList.splice(i, 1);
+                j--;
+            }
+        }
+    }
+    cb(nameList);
 }
-uniq(names, function(uniqArr){
-  console.log('The new names array with all the duplicate items removed is ', uniqArr);
-});
 
+uniq(names, function(uniqArr) {
+    console.log('The new names array with all the duplicate items removed is ', uniqArr);
+});
 
 
 
@@ -93,6 +102,10 @@ uniq(names, function(uniqArr){
 
 
 var names = ['Tyler', 'Cahlan', 'Ryan', 'Colt', 'Tyler', 'Blaine', 'Cahlan'];
+function each(nameList,cb) {
+for (var i = 0; i<nameList.length; i++) {
+  cb(i,nameList[i]);
+}
 each(names, function(item, indice){
   console.log('The item in the ' + indice + 'position is ' + item)
 });
