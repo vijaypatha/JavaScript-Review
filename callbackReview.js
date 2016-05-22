@@ -118,28 +118,36 @@ each(names, function(item, indice){
 
 
 
-var users = [
-  {
+var users = [{
     id: '12d',
     email: 'tyler@gmail.com',
     name: 'Tyler',
     address: '167 East 500 North'
-  },
-  {
+}, {
     id: '15a',
     email: 'cahlan@gmail.com',
     name: 'Cahlan',
     address: '135 East 320 North'
-  },
-  {
+}, {
     id: '16t',
     email: 'ryan@gmail.com',
     name: 'Ryan',
     address: '192 East 32 North'
-  },
-];
-getUserById('16t', users, function(user){
-  console.log('The user with the id 16t has the email of ' + user.email + 'the name of ' + user.name + ' and the address of ' + user.address);
+}, ];
+
+function getUserById(randid, userObj, cb) {
+    for (var i = 0; i < userObj.length; i++) {
+        if (userObj.id === randid) {
+            var result =
+                return userObj[i]);
+    }
+}
+user(result);
+}
+
+
+getUserById('16t', users, function(user) {
+    console.log('The user with the id 16t has the email of ' + user.email + 'the name of ' + user.name + ' and the address of ' + user.address);
 });
 
 
