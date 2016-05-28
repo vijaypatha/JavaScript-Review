@@ -1,3 +1,4 @@
+//Finished but incompelete answer. Several questions on the outcome.
 var songs =
   [
     {"wrapperType":"track", "kind":"song", "artistId":351794, "collectionId":557119, "trackId":556993, "artistName":"Nelly featuring City Spud", "collectionName":"Country Grammar", "trackName":"Ride Wit Me (feat. City Spud)", "collectionCensoredName":"Country Grammar", "trackCensoredName":"Ride Wit Me (feat. City Spud)", "collectionArtistName":"Nelly", "artistViewUrl":"https://itunes.apple.com/us/artist/nelly/id351794?uo=4", "collectionViewUrl":"https://itunes.apple.com/us/album/ride-wit-me-feat.-city-spud/id557119?i=556993&uo=4", "trackViewUrl":"https://itunes.apple.com/us/album/ride-wit-me-feat.-city-spud/id557119?i=556993&uo=4", "previewUrl":"http://a562.phobos.apple.com/us/r1000/076/Music/f2/25/1b/mzm.hbiumwcw.aac.p.m4a", "artworkUrl30":"http://a3.mzstatic.com/us/r30/Features/5f/90/c8/dj.psehvfan.30x30-50.jpg", "artworkUrl60":"http://a5.mzstatic.com/us/r30/Features/5f/90/c8/dj.psehvfan.60x60-50.jpg", "artworkUrl100":"http://a4.mzstatic.com/us/r30/Features/5f/90/c8/dj.psehvfan.100x100-75.jpg", "collectionPrice":9.99, "trackPrice":1.29, "releaseDate":"2000-06-27T07:00:00Z", "collectionExplicitness":"explicit", "trackExplicitness":"explicit", "discCount":1, "discNumber":1, "trackCount":17, "trackNumber":7, "trackTimeMillis":291782, "country":"USA", "currency":"USD", "contentAdvisoryRating":"Explicit", "radioStationUrl":"https://itunes.apple.com/station/idra.556993"},
@@ -41,15 +42,30 @@ var songs =
   function arrGetter() {
     return songs;
   }
+  arrGetter();
 
 
-//Now write a function that takes in two paramaters.  This function is acting like a setter.
-//The first parameter is a song object and the second parameter is a callback (which will be a placeholder for your getter function)
+//Now write a function that takes in two paramaters.
+//This function is acting like a setter.
+//The first parameter: is a song object and  /* any song object? */
+//the second parameter is a callback (which will be a placeholder for your getter function)
 //Inside your setter function first add the first parameter, or the song object, to the end of your songs array.
 //Once you do that, call your callback (getter) function which should get the songs and return them.
 
   //code here
-  function arrSetter(songList, cb){
+  //VERSION 1
+  // function arrSetter(aSong, cb) {
+  //     cb(songs.push(aSong));
+  // }
+  // arrSetter(songs[0], function() { //parament aSong ==> how to pass a object in an array as a argument????
+  //     arrGetter(); //calling callback(getter)
+  // })
 
-
+//VERSION TWO
+  function arrSetter(aSong, cb) {
+      songs.push(aSong);
+      //return cb; //from class
   }
+  arrSetter(songs[0], function() { //parament aSong ==> how to pass a object in an array as a argument????
+      cb(arrGetter()); //calling callback(getter)
+  })

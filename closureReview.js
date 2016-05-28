@@ -1,3 +1,5 @@
+//NEED TO START
+
 var callFriend = function(){
   var friend = 'Jake';
   function callF(number){
@@ -6,7 +8,7 @@ var callFriend = function(){
   return callF;
 };
 
-//Above you're given a callFriend function that returns another function. 
+//Above you're given a callFriend function that returns another function.
 //Do what you need to do in order to call your function and get 'Calling Jake at 435-215-9248' in your console.
 
   //code here
@@ -15,8 +17,42 @@ var callFriend = function(){
 
 /*
 
-Write a function that accepts a function as it's first argument and returns a new function (which calls the original function that was passed in) that can only ever be executed once.
-
-Once completed, add a second arguments that allows the function to be executed N number of times. After the function has been called N number of times, console.log('STAHHP');
-
+Write a function that accepts a function as it's first argument
+and returns a new function
+//(which calls the original function that was passed in)
+that can only ever be executed once.
+Once completed, add a second arguments that allows the function to be executed N number of times.
+After the function has been called N number of times, console.log('STAHHP');
 */
+var runN = function(fn) { //20
+    var count = 0; //for line 23
+    return function() { //21
+        if (count === 0) { //for line 23
+            fn(); //22
+            count++; //for line 23
+        }
+    }
+};
+
+var result = runN(function(){
+  console.log('run');
+})
+
+//step 2 finalizing for 24 and 25
+
+var runN = function(fn,timesToRun) { //20
+    var count = timesToRun; //for line 23 // count is the
+    return function() { //21
+        if (count === 0) { //for line 23
+            fn(); //22
+            count--; //for line 23
+        } else {
+          console.log('STAHHP');
+        }
+    }
+};
+
+var result = runN(function(){
+  console.log('run');
+}, 5);
+result();

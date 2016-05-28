@@ -1,3 +1,5 @@
+//COMPLETED//
+
 var threeItems = [1, 2, 3];
 // //create a function named 'last' that returns the last item from 'threeItems'
 // //alert the result of your function

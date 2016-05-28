@@ -1,3 +1,5 @@
+//STATUS: Last PROBLEM//
+
 //Create a Animal Constructor that has the following parameters. species, name, legs, color,
 //food (which is an array of foods they can eat).
 

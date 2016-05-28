@@ -1,3 +1,5 @@
+//COMPLETED//
+
 /* Declare and Define the functions here that will make the function calls below work properly */
 var names = ['Tyler', 'Cahlan', 'Ryan', 'Colt', 'Tyler', 'Blaine', 'Cahlan'];
 function first(nameList, cb) {
