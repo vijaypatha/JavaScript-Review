@@ -48,24 +48,23 @@ flatten([1, 2, [3, [4], 5, 6], 7]) // [1, 2, 3, 4, 5, 6, 7]
 //   return x.concat(y);
 // }, []);
 
-function flatten(arry){
+function flatten(arry) {
     //recursion - fn tht calls itself
     var newAry = [];
-    for (var i=0;i<arry.length;i++){
-      if (Array.isArray(arry[i])){
-        var flatAry = flatten(arry[i])
-          for (var j=0;j<flatAry.length;j++){
-              newAry.push(flatAry[j])
-          }
-      }else{
-        newAry.push(arry[i]);
-      }
+    for (var i = 0; i < arry.length; i++) {
+        if (Array.isArray(arry[i])) {
+            var flatAry = flatten(arry[i])
+            for (var j = 0; j < flatAry.length; j++) {
+                newAry.push(flatAry[j])
+            }
+        } else {
+            newAry.push(arry[i]);
+        }
     }
     return newAry;
 }
 
 console.log(flatten([1, 2, [3, [4], 5, 6], 7]));
-
 
 /*
 
